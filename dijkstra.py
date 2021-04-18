@@ -35,7 +35,7 @@ def make_matrix(graph):
     return matrix
 
 def dijkstra(graph, start_node, end_node):
-    # Возвращает кортеж (наимеьшее время, путь)
+    # Возвращает кортеж (наименьшее время, путь)
     start_node = index_convert_graph(graph, start_node)[1]
     end_node = index_convert_graph(graph, end_node=end_node)[2]
     matrix = make_matrix(graph)
