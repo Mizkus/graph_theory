@@ -1,4 +1,5 @@
 def index_convert_graph(graph, start_node = None, end_node = None):
+    # Присваивает индекс каждому узлу графа
     key_index = dict()
     value_index = dict()
     c = 0
@@ -11,6 +12,7 @@ def index_convert_graph(graph, start_node = None, end_node = None):
     return (key_index, start_node, end_node, value_index)
 
 def graph_converter(graph):
+    # Возращает индексированный граф
     graph_index = dict()
     for i in range(len(graph)):
         graph_index[i] = {}
@@ -22,6 +24,7 @@ def graph_converter(graph):
     return graph_index
 
 def make_matrix(graph):
+    # Возвращает матрицу смежности для индексированного графа
     graph = graph_converter(graph)
     matrix = [0] * len(graph)
     for i in graph.keys():
@@ -32,6 +35,7 @@ def make_matrix(graph):
     return matrix
 
 def dijkstra(graph, start_node, end_node):
+    # Возвращает кортеж (наимеьшее время, путь)
     start_node = index_convert_graph(graph, start_node)[1]
     end_node = index_convert_graph(graph, end_node=end_node)[2]
     matrix = make_matrix(graph)

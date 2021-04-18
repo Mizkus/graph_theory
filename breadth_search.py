@@ -1,4 +1,5 @@
 def index_convert_graph(graph, start_node = None, end_node = None):
+    # Присваивает индекс каждому узлу графа
     key_index = dict()
     value_index = dict()
     c = 0
@@ -11,6 +12,7 @@ def index_convert_graph(graph, start_node = None, end_node = None):
     return (key_index, start_node, end_node, value_index)
 
 def graph_converter(graph):
+    # Возвращает индексированный граф
     graph_index = dict()
     for i in range(len(graph)):
         graph_index[i] = {}
@@ -22,6 +24,7 @@ def graph_converter(graph):
     return graph_index
 
 def breadth_search(graph, start_node, end_node):
+    # Возвращает кортеж (колличество шагов, путь)
     from collections import deque
     graph_index = graph_converter(graph)
     start_node = index_convert_graph(graph, start_node)[1]
